@@ -1,0 +1,232 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="jQuery.ui.datepicker.js"></script>
+<script src="jquery.ui.datepicker.mobile.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+    $(function () {
+        $("#datepicker2").datepicker();
+    });
+</script>
+<style type="text/css">
+    #container {
+        height: 100%;
+        width: 100%;
+        font-size: 0;
+    }
+
+    #container1 {
+        height: 100%;
+        width: 100%;
+        font-size: 0;
+    }
+
+    #container2 {
+        height: 100%;
+        width: 100%;
+        font-size: 0;
+    }
+
+    .test1 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        font-size: 12px;
+        width: 6%;
+        color:white;
+    }
+
+    .test2 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        font-size: 12px;
+        width: 17%;
+    }
+
+    .test3 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        font-size: 12px;
+        width: 6%;
+    }
+
+    .legd {
+        color:white;
+        
+    }
+
+    .fldset {
+        margin-top: 2em;
+        padding-left:0.5em;
+        padding-right: 0.5em;
+        /*background-color: gray;*/
+        
+    }
+
+    /*body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }*/
+
+    /* Set padding to keep content from hitting the edges */
+    /*.body-content {
+        padding-left: 2px;
+        padding-right: 2px;
+    }*/
+
+    #divcontainer {
+        background-color: gray;
+        
+    }
+
+    #GreenContainer{
+        background-color:darkolivegreen;
+        color:white;
+        text-align:center;
+       
+    }
+
+    #GridContainer{
+        height:50%;
+        width:100%;
+        background-color:lightgray;
+        
+    }
+
+    #CreateLock{
+        background-color:gray;
+    }
+
+    input[type="submit"] {
+        border: 1px solid black;        
+        font-family: helvetica;
+        color: white;
+        background-color:green;
+        width:5em;
+    }
+
+    input[type="text"]{
+        width:71%;
+    }
+
+    .gridLayout{
+        width:12%;
+        vertical-align:top;
+        display:inline-block;
+    }
+
+    .select{
+        width:50%;
+    }
+
+</style>
+<div id="divcontainer">
+    <fieldset class="fldset">
+        <legend class="legd">Display Locks</legend>
+        <div id="container">
+            <div class="test1">Sales Area</div>
+            <div class="test2"><input type="text" /></div>
+            <div class="test1">Start Date</div>
+            <div class="test2"><input type="date" id="datepicker" /></div>
+            <div class="test1">End Date</div>
+            <div class="test2"><input type="date" id="datepicker2" /></div>
+            <div class="test1">Lock Type</div>
+            <div class="test2">
+            @*<input type="text" />*@
+                <select  class="select" id="LockType" name="LockType">
+                    <option>--SELECT--</option>
+                    <option>AL</option>
+                    <option>CP</option>
+                    <option>FR</option>
+                    <option>LS</option>
+                   <option>PM</option>
+                    <option>PS</option>
+                    <option>SL</option>
+                    <option>TX</option>
+                    <option>LU</option>
+                </select>
+            </div>
+            <div class="test3"><input type="submit" value="Display" /></div>
+        </div>
+        <div style="height:2em"></div>
+    </fieldset>
+</div>
+
+<div style="height:1em"></div>
+<div id="GreenContainer">
+    <b>Inventory Locks in Landmark</b>
+</div>
+
+
+<div id="GridContainer">
+    
+        <div class="gridLayout"><b>Date From</b></div>
+        <div class="gridLayout"><b>Date To</b></div>
+        <div class="gridLayout"><b>Time From</b></div>
+        <div class="gridLayout"><b>Time To</b></div>
+        <div class="gridLayout"><b>Sales Area</b></div>
+        <div class="gridLayout"><b>Lock</b></div>
+        <div class="gridLayout"><b>Amend Lock</b></div>
+        <div class="gridLayout"><b>Delete Lock</b></div>
+    </br>
+
+   
+</div>
+
+<div id="CreateLock">
+
+    <fieldset class="fldset">
+        <legend class="legd">Create an Inventory Lock</legend>
+        <div id="container1">
+            <div class="test1">Sales Area</div>
+            <div class="test2">
+            <input type="text" />
+                @*@Html.DropDownList("dropdownSalesArea",Model.SalesArea)*@
+            </div>
+            <div class="test1">Start Date</div>
+            <div class="test2"><input type="date" id="datepicker" /></div>
+            <div class="test1">End Date</div>
+            <div class="test2"><input type="date" id="datepicker2" /></div>
+            <div class="test1">Lock Type</div>
+            <div class="test2">
+                <select class="select" id="LockType" name="LockType"> 
+                    <option>AL</option>
+                    <option>CP</option>
+                    <option>FR</option>
+                    <option>LS</option>
+                    <option>PM</option>
+                    <option>PS</option>
+                    <option>SL</option>
+                    <option>TX</option>
+                    <option>LU</option>
+                </select>
+            </div>
+            <div class="test3"><input type="submit" value="Apply" /></div>
+        </div>
+        <div style="height:1em"></div>
+        <div id="container2">
+            <div class="test1"></div>
+            <div class="test2"></div>
+            <div class="test1">From Time</div>
+            <div class="test2"><input type="text"/></div>
+            <div class="test1">To Time</div>
+            <div class="test2"><input type="text"/></div>
+            <div class="test1"></div>
+            <div class="test2"></div>
+            <div class="test3"></div>
+          </div> 
+        <div style="height:2em"></div>
+    </fieldset>
+</div>
+
+
+
+
