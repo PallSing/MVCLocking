@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Landmark.Classes.Breaks" />
+  <xs:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" />
+  <xs:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" />
+  <xs:element name="ListInventoryLock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="salesAreaNumbers" nillable="true" type="q1:ArrayOfint" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInventoryLockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Landmark.Classes.Breaks" minOccurs="0" name="ListInventoryLockResult" nillable="true" type="q2:ArrayOfInventoryLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInventoryLock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="salesAreaNumbers" nillable="true" type="q3:ArrayOfint" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="startTime" type="xs:int" />
+        <xs:element minOccurs="0" name="endTime" type="xs:int" />
+        <xs:element minOccurs="0" name="lockPositionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" minOccurs="0" name="validationStandardParameters" nillable="true" type="q4:ValidationStandardParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInventoryLockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateInventoryLockResult" type="xs:boolean" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" minOccurs="0" name="errors" nillable="true" type="q5:ArrayOfError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendInventoryLock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesAreaNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="currentStartTime" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="startTime" type="xs:int" />
+        <xs:element minOccurs="0" name="endTime" type="xs:int" />
+        <xs:element minOccurs="0" name="lockPositionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" type="xs:int" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" minOccurs="0" name="validationStandardParameters" nillable="true" type="q6:ValidationStandardParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendInventoryLockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AmendInventoryLockResult" type="xs:boolean" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" minOccurs="0" name="errors" nillable="true" type="q7:ArrayOfError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInventoryLock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="salesAreaNumbers" nillable="true" type="q8:ArrayOfint" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="startTime" type="xs:int" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" minOccurs="0" name="validationStandardParameters" nillable="true" type="q9:ValidationStandardParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInventoryLockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteInventoryLockResult" type="xs:boolean" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" minOccurs="0" name="errors" nillable="true" type="q10:ArrayOfError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInventoryLockByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="salesAreaCodes" nillable="true" type="q11:ArrayOfstring" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListInventoryLockByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Landmark.Classes.Breaks" minOccurs="0" name="ListInventoryLockByCodeResult" nillable="true" type="q12:ArrayOfInventoryLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInventoryLockByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="salesAreaCodes" nillable="true" type="q13:ArrayOfstring" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="startTime" type="xs:int" />
+        <xs:element minOccurs="0" name="endTime" type="xs:int" />
+        <xs:element minOccurs="0" name="lockPositionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" type="xs:int" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" minOccurs="0" name="validationStandardParameters" nillable="true" type="q14:ValidationStandardParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInventoryLockByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateInventoryLockByCodeResult" type="xs:boolean" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" minOccurs="0" name="errors" nillable="true" type="q15:ArrayOfError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendInventoryLockByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salesAreaCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="currentStartTime" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="startTime" type="xs:int" />
+        <xs:element minOccurs="0" name="endTime" type="xs:int" />
+        <xs:element minOccurs="0" name="lockPositionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" type="xs:int" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" minOccurs="0" name="validationStandardParameters" nillable="true" type="q16:ValidationStandardParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AmendInventoryLockByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AmendInventoryLockByCodeResult" type="xs:boolean" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" minOccurs="0" name="errors" nillable="true" type="q17:ArrayOfError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInventoryLockByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="salesAreaCodes" nillable="true" type="q18:ArrayOfstring" />
+        <xs:element minOccurs="0" name="inventoryLockCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="startTime" type="xs:int" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" minOccurs="0" name="validationStandardParameters" nillable="true" type="q19:ValidationStandardParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInventoryLockByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteInventoryLockByCodeResult" type="xs:boolean" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" minOccurs="0" name="errors" nillable="true" type="q20:ArrayOfError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

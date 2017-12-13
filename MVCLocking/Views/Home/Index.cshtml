@@ -1,6 +1,11 @@
-﻿@{
+﻿@model IEnumerable<MVCLocking.Models.Lock>
+@*@model IEnumerable<MVCLocking.Models.Lock>*@
+
+@{
     ViewBag.Title = "Home Page";
 }
+
+
 <script src="jQuery.ui.datepicker.js"></script>
 <script src="jquery.ui.datepicker.mobile.js"></script>
 <script type="text/javascript">
@@ -9,7 +14,9 @@
     });
     $(function () {
         $("#datepicker2").datepicker();
-    });
+    }); 
+
+  
 </script>
 <style type="text/css">
     #container {
@@ -46,7 +53,7 @@
         zoom: 1;
         vertical-align: top;
         font-size: 12px;
-        width: 17%;
+        width: 14%;
     }
 
     .test3 {
@@ -55,12 +62,22 @@
         zoom: 1;
         vertical-align: top;
         font-size: 12px;
-        width: 6%;
+        width: 5%;
     }
 
     .legd {
         color:white;
         
+    }
+
+    .test4 {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        font-size: 12px;
+        width: 9%;
+        padding-left: 2em;
     }
 
     .fldset {
@@ -98,6 +115,7 @@
         height:50%;
         width:100%;
         background-color:lightgray;
+        padding-left : 9%;
         
     }
 
@@ -105,20 +123,28 @@
         background-color:gray;
     }
 
-    input[type="submit"] {
-        border: 1px solid black;        
+    #CreateLock1 {
+        border: 1px solid black;
         font-family: helvetica;
         color: white;
-        background-color:green;
-        width:5em;
+        background-color: green;
+        width: 8em;
     }
+        
+        input[type="submit"] {
+            border: 1px solid black;
+            font-family: helvetica;
+            color: white;
+            background-color: green;
+            width: 5em;
+        }
 
     input[type="text"]{
         width:71%;
     }
 
     .gridLayout{
-        width:12%;
+        width:10%;
         vertical-align:top;
         display:inline-block;
     }
@@ -130,7 +156,7 @@
 </style>
 <div id="divcontainer">
     <fieldset class="fldset">
-        <legend class="legd">Display Locks</legend>
+        <legend class="legd">Search Locks</legend>
         <div id="container">
             <div class="test1">Sales Area</div>
             <div class="test2"><input type="text" /></div>
@@ -142,7 +168,7 @@
             <div class="test2">
             @*<input type="text" />*@
                 <select  class="select" id="LockType" name="LockType">
-                    <option>--SELECT--</option>
+                    <option>-SELECT-</option>
                     <option>AL</option>
                     <option>CP</option>
                     <option>FR</option>
@@ -154,41 +180,68 @@
                     <option>LU</option>
                 </select>
             </div>
-            <div class="test3"><input type="submit" value="Display" /></div>
+            <div class="test3"><input type="submit" value="Display" onclick="location.href='@Url.Action("GetLocks", "Home")'" /></div>
+            <div class="test4"><input type="submit" id="CreateLock1"value="Create Lock" onclick="document.getElementById('CreateForm').style.display = 'inline'" /></div>
+          
         </div>
+       
         <div style="height:2em"></div>
     </fieldset>
 </div>
+<div>
+    <div></div>
+</div>
 
 <div style="height:1em"></div>
+
+@if (Model != null && Model.Any())
+{
 <div id="GreenContainer">
     <b>Inventory Locks in Landmark</b>
 </div>
 
-
 <div id="GridContainer">
-    
-        <div class="gridLayout"><b>Date From</b></div>
-        <div class="gridLayout"><b>Date To</b></div>
-        <div class="gridLayout"><b>Time From</b></div>
-        <div class="gridLayout"><b>Time To</b></div>
-        <div class="gridLayout"><b>Sales Area</b></div>
-        <div class="gridLayout"><b>Lock</b></div>
-        <div class="gridLayout"><b>Amend Lock</b></div>
-        <div class="gridLayout"><b>Delete Lock</b></div>
-    </br>
 
-   
+    <div class="gridLayout"><b>Date From</b></div>
+    <div class="gridLayout"><b>Date To</b></div>
+    <div class="gridLayout"><b>Time From</b></div>
+    <div class="gridLayout"><b>Time To</b></div>
+    <div class="gridLayout"><b>Area</b></div>
+    @*<div class="gridLayout"><b>Lock</b></div>*@
+    <div class="gridLayout"><b>Lock Type</b></div>
+    <div class="gridLayout"><b>Lock Position Code</b></div>
+    <div class="gridLayout"><b>Amend</b></div>
+    <div class="gridLayout"><b>Delete</b></div>
+
+
+    @foreach (var i in Model)
+    {
+    <div class="gridLayout">@i.startDate</div>
+    <div class="gridLayout">@i.endDate</div>
+    <div class="gridLayout">@i.startTime</div>
+    <div class="gridLayout">@i.endTime</div>
+    <div class="gridLayout">@i.salesArea</div>
+    @*<div class="gridLayout"><b>Lock</b></div>*@
+    <div class="gridLayout">@i.invhCode</div>
+    <div class="gridLayout">@i.lockPositionCode</div>
+    <div class="gridLayout"><img src="~/Content/Images/amend.jpg" alt="Edit" height="16" width="18"/> </div>
+    <div class="gridLayout"><img src="~/Content/Images/delete.png" alt="Delete" height="30" width="30" /></div>
+
+    }
 </div>
+}
 
-<div id="CreateLock">
+
+
+
+<div id = "CreateLock" style="display:none" >
 
     <fieldset class="fldset">
         <legend class="legd">Create an Inventory Lock</legend>
-        <div id="container1">
+        <div id = "container1" >
             <div class="test1">Sales Area</div>
-            <div class="test2">
-            <input type="text" />
+             <div class="test2">
+            <input type = "text" />
                 @*@Html.DropDownList("dropdownSalesArea",Model.SalesArea)*@
             </div>
             <div class="test1">Start Date</div>

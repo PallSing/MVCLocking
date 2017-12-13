@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LandmarkSystemInventoryLock" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Landmark.Classes.Breaks" />
+      <xsd:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Landmark.Parameters.Interfaces" />
+      <xsd:import schemaLocation="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Landmark.Classes.Internal" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILandmarkSystemInventoryLock_ListInventoryLock_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListInventoryLock" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_ListInventoryLock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListInventoryLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_CreateInventoryLock_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInventoryLock" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_CreateInventoryLock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInventoryLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_AmendInventoryLock_InputMessage">
+    <wsdl:part name="parameters" element="tns:AmendInventoryLock" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_AmendInventoryLock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AmendInventoryLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_DeleteInventoryLock_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInventoryLock" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_DeleteInventoryLock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInventoryLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_ListInventoryLockByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListInventoryLockByCode" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_ListInventoryLockByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListInventoryLockByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_CreateInventoryLockByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInventoryLockByCode" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_CreateInventoryLockByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInventoryLockByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_AmendInventoryLockByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:AmendInventoryLockByCode" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_AmendInventoryLockByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AmendInventoryLockByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_DeleteInventoryLockByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInventoryLockByCode" />
+  </wsdl:message>
+  <wsdl:message name="ILandmarkSystemInventoryLock_DeleteInventoryLockByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInventoryLockByCodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILandmarkSystemInventoryLock">
+    <wsdl:operation name="ListInventoryLock">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/ListInventoryLock" message="tns:ILandmarkSystemInventoryLock_ListInventoryLock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/ListInventoryLockResponse" message="tns:ILandmarkSystemInventoryLock_ListInventoryLock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInventoryLock">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/CreateInventoryLock" message="tns:ILandmarkSystemInventoryLock_CreateInventoryLock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/CreateInventoryLockResponse" message="tns:ILandmarkSystemInventoryLock_CreateInventoryLock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AmendInventoryLock">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/AmendInventoryLock" message="tns:ILandmarkSystemInventoryLock_AmendInventoryLock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/AmendInventoryLockResponse" message="tns:ILandmarkSystemInventoryLock_AmendInventoryLock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventoryLock">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/DeleteInventoryLock" message="tns:ILandmarkSystemInventoryLock_DeleteInventoryLock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/DeleteInventoryLockResponse" message="tns:ILandmarkSystemInventoryLock_DeleteInventoryLock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListInventoryLockByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/ListInventoryLockByCode" message="tns:ILandmarkSystemInventoryLock_ListInventoryLockByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/ListInventoryLockByCodeResponse" message="tns:ILandmarkSystemInventoryLock_ListInventoryLockByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInventoryLockByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/CreateInventoryLockByCode" message="tns:ILandmarkSystemInventoryLock_CreateInventoryLockByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/CreateInventoryLockByCodeResponse" message="tns:ILandmarkSystemInventoryLock_CreateInventoryLockByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AmendInventoryLockByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/AmendInventoryLockByCode" message="tns:ILandmarkSystemInventoryLock_AmendInventoryLockByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/AmendInventoryLockByCodeResponse" message="tns:ILandmarkSystemInventoryLock_AmendInventoryLockByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventoryLockByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/DeleteInventoryLockByCode" message="tns:ILandmarkSystemInventoryLock_DeleteInventoryLockByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILandmarkSystemInventoryLock/DeleteInventoryLockByCodeResponse" message="tns:ILandmarkSystemInventoryLock_DeleteInventoryLockByCode_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILandmarkSystemInventoryLock" type="tns:ILandmarkSystemInventoryLock">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListInventoryLock">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/ListInventoryLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInventoryLock">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/CreateInventoryLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmendInventoryLock">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/AmendInventoryLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventoryLock">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/DeleteInventoryLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListInventoryLockByCode">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/ListInventoryLockByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInventoryLockByCode">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/CreateInventoryLockByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AmendInventoryLockByCode">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/AmendInventoryLockByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventoryLockByCode">
+      <soap:operation soapAction="http://tempuri.org/ILandmarkSystemInventoryLock/DeleteInventoryLockByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebHttpBinding_ILandmarkSystemInventoryLock" type="tns:ILandmarkSystemInventoryLock">
+    <wsdl:operation name="ListInventoryLock">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInventoryLock">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AmendInventoryLock">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventoryLock">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ListInventoryLockByCode">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInventoryLockByCode">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AmendInventoryLockByCode">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInventoryLockByCode">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LandmarkSystemInventoryLock">
+    <wsdl:port name="BasicHttpBinding_ILandmarkSystemInventoryLock" binding="tns:BasicHttpBinding_ILandmarkSystemInventoryLock">
+      <soap:address location="http://ywast056.itvplc.ads:91/LandmarkSystemInventoryLock.svc" />
+    </wsdl:port>
+    <wsdl:port name="WebHttpBinding_ILandmarkSystemInventoryLock" binding="tns:WebHttpBinding_ILandmarkSystemInventoryLock" />
+  </wsdl:service>
+</wsdl:definitions>
